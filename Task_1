@@ -1,0 +1,84 @@
+Vision Task using Pretrained Models (Ultralytics)
+Objective
+
+We aim to solve a real-world problem in the Computer Vision domain using pretrained models from the Ultralytics YOLO framework.
+As the first step, we will install and test the ultralytics package in a virtual environment on a Linux system.
+
+1. Setting up the Environment
+
+Step 1: Create a virtual environment (i have used MiniConda)
+
+conda create -n yolo python=3.10
+
+Step 2: Activate the virtual environment
+conda activate yolo
+
+After activation, your terminal prompt showed (yolo) at the beginning.
+
+(yolo) reeja123@SREEJACSE22HPPAVILLIONLAPTOP:/mnt/c/Users/Sreeja$
+
+2. Installing Ultralytics
+
+Refer to the official documentation for reference:
+https://docs.ultralytics.com/quickstart/
+
+Install the Ultralytics package using pip:
+
+pip install ultralytics
+
+3. Testing the Installation
+
+Example 1: Object Detection
+
+Run inference using a pretrained YOLOv8 model on an online image:
+
+yolo predict model=yolov8n.pt source='https://ultralytics.com/images/bus.jpg
+'
+
+This will:
+
+Download the pretrained YOLOv8 model (yolov8n.pt)
+
+Perform object detection on the provided image
+
+Save the output (image with bounding boxes) inside the runs/predict/ directory
+
+You can view the result using:
+
+xdg-open runs/predict/bus.jpg
+
+Example 2: Segmentation
+
+For instance segmentation, use a segmentation model:
+
+yolo predict model=yolov8n-seg.pt source='https://ultralytics.com/images/bus.jpg
+'
+
+This will generate segmentation masks and labels on the same image.
+The segmented output will also be stored in the runs/predict/ folder.
+
+4. Verify Results
+
+The model should detect multiple objects such as:
+
+bus
+
+person
+
+traffic light
+
+and assign bounding boxes or segmentation masks along with confidence scores.
+
+5. Deactivating the Environment
+
+Once testing is complete, deactivate the virtual environment:
+
+deactivate
+
+6. Next Steps
+
+Test the model with additional images or datasets.
+
+Try other YOLOv8 models such as detection, segmentation, or pose estimation.
+
+Fine-tune pretrained models on a custom dataset to address a specific real-world vision problem.
